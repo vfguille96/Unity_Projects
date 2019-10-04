@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\alumno1920\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\alumno1920\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_Clase_04_10.1076525101.00" t="ExcludeRecursive" />
+    <e p="C:\Users\alumno1920\Documents\Proyectos_Unity\Clase_04_10" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Cartoon SportCar B01" t="Include">
+          <e p="script" t="Include">
+            <e p="brake_light.cs" t="Include" />
+            <e p="on_off_light.cs" t="Include" />
+            <e p="OpenElement.cs" t="Include" />
+          </e>
+          <e p="Standard Assets" t="Include">
+            <e p="divers" t="Include">
+              <e p="ChromaticAberrationShader.shader" t="Include" />
+              <e p="DepthOfFieldDX11.shader" t="Include" />
+              <e p="DepthOfFieldScatter.shader" t="Include" />
+              <e p="SeparableBlur.shader" t="Include" />
+              <e p="VignettingShader.shader" t="Include" />
+            </e>
+            <e p="script" t="Include">
+              <e p="AbstractTargetFollower.cs" t="Include" />
+              <e p="AutoCam.cs" t="Include" />
+              <e p="CameraSwitch.cs" t="Include" />
+              <e p="CarAudio.cs" t="Include" />
+              <e p="CarController.cs" t="Include" />
+              <e p="CarUserControl.cs" t="Include" />
+              <e p="CrossPlatformInput" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="AxisTouchButton.cs" t="Include" />
+                  <e p="ButtonHandler.cs" t="Include" />
+                  <e p="CrossPlatformInputManager.cs" t="Include" />
+                  <e p="InputAxisScrollbar.cs" t="Include" />
+                  <e p="Joystick.cs" t="Include" />
+                  <e p="MobileControlRig.cs" t="Include" />
+                  <e p="PlatformSpecific" t="Include">
+                    <e p="MobileInput.cs" t="Include" />
+                    <e p="StandaloneInput.cs" t="Include" />
+                  </e>
+                  <e p="TiltInput.cs" t="Include" />
+                  <e p="TouchPad.cs" t="Include" />
+                  <e p="VirtualInput.cs" t="Include" />
+                </e>
+              </e>
+              <e p="DepthOfField.cs" t="Include" />
+              <e p="FreeLookCam.cs" t="Include" />
+              <e p="PivotBasedCameraRig.cs" t="Include" />
+              <e p="PlatformSpecificContent.cs" t="Include" />
+              <e p="PostEffectsBase.cs" t="Include" />
+              <e p="ProtectCameraFromWallClip.cs" t="Include" />
+              <e p="SimpleActivatorMenu.cs" t="Include" />
+              <e p="SkidTrail.cs" t="Include" />
+              <e p="VignetteAndChromaticAberration.cs" t="Include" />
+              <e p="WheelEffects.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="race-track-lake" t="Include">
+          <e p="readmore.txt" t="Include" />
+          <e p="Standard Assets" t="Include">
+            <e p="Environment" t="Include">
+              <e p="Water (Basic)" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="WaterBasic.cs" t="Include" />
+                </e>
+                <e p="Shaders" t="Include">
+                  <e p="FXWaterBasic.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="rotacion1.cs" t="Include" />
+          <e p="rotation.cs" t="Include" />
+          <e p="rotationDoor.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Clase_04_10.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
