@@ -1,0 +1,2 @@
+Se puede compilar en 32-64bits y generar el ejecutable. 
+El entorno pide añadir un módulo para poder generar el ejecutable APK.

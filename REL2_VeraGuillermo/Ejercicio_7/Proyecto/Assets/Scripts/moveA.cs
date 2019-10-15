@@ -8,7 +8,7 @@ public class moveA : MonoBehaviour
     private const float MIN = -1.173F;
     private const float MAX = 1.218F;
     public float _posZ = 0;
-    private float _vel = 4F;
+    private float _vel = 5F;
 
     void Start()
     {
