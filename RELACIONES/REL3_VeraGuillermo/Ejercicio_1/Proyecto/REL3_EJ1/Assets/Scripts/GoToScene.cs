@@ -16,10 +16,12 @@ public class GoToScene : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey(KeyCode.Escape))
-			QuitGame();
+	void Update ()
+	{
+		QuitGameEsc();
 	}
+
+	
 
 	public void ChangeScene()
 	{
@@ -44,4 +46,9 @@ public class GoToScene : MonoBehaviour
 	}
 
 	public void QuitGame() { Application.Quit(); }
+
+	private void QuitGameEsc()
+	{
+		if (Input.GetKey(KeyCode.Escape)) QuitGame();
+	}
 }
