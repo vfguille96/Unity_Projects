@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class GoToScene : MonoBehaviour
 {
-
 	public Button button;
 	
 	// Use this for initialization
 	void Start () {
+		
 		button.onClick.AddListener(ChangeScene);
 	}
 	
