@@ -8,11 +8,14 @@ using UnityEngine.UI;
 public class GoToScene : MonoBehaviour
 {
 	public Button button;
-	
+	private Canvas canvas;
+
 	// Use this for initialization
 	void Start () {
 		
 		button.onClick.AddListener(ChangeScene);
+		canvas = GameObject.Find("CanvasConf").GetComponent<Canvas>();
+		canvas.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -40,7 +43,13 @@ public class GoToScene : MonoBehaviour
 				SceneManager.LoadScene("Menu4");
 				break;
 			case "btEscape":
+				canvas.enabled = true;
+				break;
+			case "btSalir":
 				QuitGame();
+				break;
+			case "btVolver":
+				canvas.enabled = false;
 				break;
 		}
 	}
@@ -49,6 +58,9 @@ public class GoToScene : MonoBehaviour
 
 	private void QuitGameEsc()
 	{
-		if (Input.GetKey(KeyCode.Escape)) QuitGame();
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			canvas.enabled = true;
+		}
 	}
 }
