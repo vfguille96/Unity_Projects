@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/vfgui/OneDrive/Documentos/Unity_Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_3/Ejecutable/Ejercicio_3.exe
+C:/Users/alumno1920/Documents/Proyectos_Unity/RELACIONES/REL3_VeraGuillermo/Ejercicio_3/Ejecutable/Ejercicio_3.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
