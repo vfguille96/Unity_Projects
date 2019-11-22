@@ -8,7 +8,7 @@ public class OnOffLight : MonoBehaviour
 	public Button btOn;
 	public Button btOff;
 	private GameObject _luzPrincipal;
-	[FormerlySerializedAs("_spotLight")] public GameObject spotLight;
+	public GameObject _spotLight;
 	private GameObject _lightRotGameObject;
 	private GameObject _slider;
 	private Slider _slider1;
@@ -38,7 +38,7 @@ public class OnOffLight : MonoBehaviour
 	private void InitializeComponents()
 	{
 		_lightRot = _lightRotGameObject.GetComponent<Light>();
-		_light = spotLight.GetComponent<Light>();
+		_light = _spotLight.GetComponent<Light>();
 		_slider1 = _slider.GetComponent<Slider>();
 	}
 
@@ -46,7 +46,7 @@ public class OnOffLight : MonoBehaviour
 	{
 		_lightRotGameObject = GameObject.Find("Spot Light");
 		_luzPrincipal = GameObject.FindWithTag("LuzPrincipal");
-		spotLight = GameObject.FindWithTag("LightFromLightHouse");
+		_spotLight = GameObject.FindWithTag("LightFromLightHouse");
 		_slider = GameObject.Find("Slider");
 	}
 
