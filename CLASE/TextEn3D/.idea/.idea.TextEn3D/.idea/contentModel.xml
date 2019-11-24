@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\alumno1920\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\alumno1920\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_TextEn3D.683289481.00" t="ExcludeRecursive" />
-    <e p="C:\Users\alumno1920\Documents\Proyectos_Unity\CLASE\TextEn3D" t="IncludeRecursive">
+    <e p="C:\Users\vfgui\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\vfgui\.Rider2019.2\system\resharper-host\Local\Transient\ReSharperHost\v192\SolutionCaches\_TextEn3D.1575108630.00" t="ExcludeRecursive" />
+    <e p="C:\Users\vfgui\OneDrive\Documentos\Unity Projects\CLASE\TextEn3D" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Texto.cs" t="Include" />

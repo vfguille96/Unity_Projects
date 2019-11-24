@@ -15,7 +15,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{3F45E58C-6D4C-B345-AF5F-9530EA35869E}</ProjectGuid>
+    <ProjectGuid>{1B240A8C-9A4F-2F25-B643-F3DEB7EEFA22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -80,16 +80,16 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/REL3_EJ4/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/REL3_EJ4/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/REL3_EJ4/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/REL3_EJ4/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL3_VeraGuillermo/Ejercicio_4/Proyecto/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
