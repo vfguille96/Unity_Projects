@@ -1,4 +1,4 @@
 sceneSetups:
-- path: "Assets/Scenes/Reloj anal\xF3gico.unity"
+- path: "Assets/Scenes/Cuenta atr\xE1s.unity"
   isLoaded: 1
   isActive: 1
