@@ -31,6 +31,7 @@ public class CountDown : MonoBehaviour
         _Error.color = Color.black;
         _Slider.value = 0;
         _start = false;
+        Time.fixedDeltaTime = 1;
     }
 
     private void InitializeInputs()
@@ -54,9 +55,9 @@ public class CountDown : MonoBehaviour
         {
             InitializeInputs();
 
-            if (_inputH > 0 && _inputH <= _maxH &&
-                _inputM > 0 && _inputM <= _maxM &&
-                _inputS > 0 && _inputS <= _maxS)
+            if (_inputH >= 0 && _inputH <= _maxH &&
+                _inputM >= 0 && _inputM <= _maxM &&
+                _inputS >= 0 && _inputS <= _maxS)
             {
                 _Button.GetComponentInChildren<Text>().text = "Paro";
                 _dateTime = new TimeSpan((int) _inputH, (int) _inputM, (int) _inputS);
@@ -81,15 +82,15 @@ public class CountDown : MonoBehaviour
         _Counter.text = "00:00:00";
     }
 
-    // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         if (_start)
         {
-            _dateTime -= new TimeSpan((int) _Slider.value * (int) Time.deltaTime);
+            TimeSpan ts = new TimeSpan(0, 0 ,(int) _Slider.value);
+            _dateTime = _dateTime - (ts);
             _Counter.text = _dateTime.ToString();
             if (_Counter.text == "00:00:00")
-                _start = !_start;
+                _start = false;
         }
     }
 }
