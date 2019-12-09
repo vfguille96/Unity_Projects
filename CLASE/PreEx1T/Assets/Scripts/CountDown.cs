@@ -1,50 +1,95 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CountDown : MonoBehaviour {
+public class CountDown : MonoBehaviour
+{
+    public Button _Button;
+    public Text _Counter;
+    private TimeSpan _dateTime;
+    public Text _Error;
 
-	// Use this for initialization
-	public Slider _Slider;
-	public InputField _InputH;
-	public InputField _InputM;
-	public InputField _InputS;
-	public Button _Button;
-	private DateTime _dateTime;
-	public Text _Error;
+    private float _inputH;
+    public InputField _InputH;
+    private float _inputM;
+    public InputField _InputM;
+    private float _inputS;
+    public InputField _InputS;
 
-	void Start ()
-	{
-		_Button.GetComponent<Text>().text = "Marcha";
-		_Button.onClick.AddListener(Pressed);
-		_Error.color = Color.black;
-		_Slider.value = 0;
-	}
+    private readonly float _maxH = 23;
+    private readonly float _maxM = 59;
+    private readonly float _maxS = 59;
 
-	private void Pressed()
-	{
-		if (_Button.name == "Button")
-		{
-			try
-			{
-				_dateTime = Convert.ToDateTime(DateTime.Parse(_InputH.text + ":" + _InputM.text + ":" + _InputS.text).ToShortTimeString());
-			}
-			catch (Exception e)
-			{
-				_Error.color = Color.red;
-				_dateTime = DateTime.Parse("00:00:00");
-				return;
-			}
+    // Use this for initialization
+    public Slider _Slider;
+    private bool _start;
 
-			_Button.GetComponent<Text>().text = "Paro";
-			
-		}
-	}
+    private void Start()
+    {
+        _Button.GetComponentInChildren<Text>().text = "Marcha";
+        _Button.onClick.AddListener(Pressed);
+        _Error.color = Color.black;
+        _Slider.value = 0;
+        _start = false;
+    }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void InitializeInputs()
+    {
+        try
+        {
+            _inputH = float.Parse(_InputH.text);
+            _inputM = float.Parse(_InputM.text);
+            _inputS = float.Parse(_InputS.text);
+            _Error.color = Color.black;
+        }
+        catch (Exception)
+        {
+            SetError();
+        }
+    }
+
+    private void Pressed()
+    {
+        if (_Button.name == "Button" && !_start)
+        {
+            InitializeInputs();
+
+            if (_inputH > 0 && _inputH <= _maxH &&
+                _inputM > 0 && _inputM <= _maxM &&
+                _inputS > 0 && _inputS <= _maxS)
+            {
+                _Button.GetComponentInChildren<Text>().text = "Paro";
+                _dateTime = new TimeSpan((int) _inputH, (int) _inputM, (int) _inputS);
+                _start = true;
+            }
+            else
+            {
+                SetError();
+            }
+        }
+        else
+        {
+            _Counter.text = "00:00:00";
+            _Button.GetComponentInChildren<Text>().text = "Marcha";
+            _Slider.value = 0;
+        }
+    }
+
+    private void SetError()
+    {
+        _Error.color = Color.red;
+        _Counter.text = "00:00:00";
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        if (_start)
+        {
+            _dateTime -= new TimeSpan((int) _Slider.value * (int) Time.deltaTime);
+            _Counter.text = _dateTime.ToString();
+            if (_Counter.text == "00:00:00")
+                _start = !_start;
+        }
+    }
 }
