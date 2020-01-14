@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/SphereCast.unity
+  isLoaded: 1
+  isActive: 1
