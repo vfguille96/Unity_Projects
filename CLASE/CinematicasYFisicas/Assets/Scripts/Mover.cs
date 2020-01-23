@@ -22,7 +22,8 @@ public class Mover : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate() {
-		_fuerzaEmpuje = new Vector3(Input.GetAxis("Horizontal") * _vel * Time.deltaTime, 0, Input.GetAxis("Vertical") * _vel * Time.deltaTime);
+		_fuerzaEmpuje = new Vector3(Input.GetAxis("Horizontal") * _vel * Time.deltaTime, 0, Input.GetAxis("Vertical") 
+		                                                                                    * _vel * Time.deltaTime);
 		_rigidbody.AddForce(_fuerzaEmpuje);
 		//_rigidbody.freezeRotation = true;	 // Hace que se congele la rotación. (En veh de roá', es resbalá).
 	}
