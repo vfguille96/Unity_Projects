@@ -7,15 +7,14 @@ public class StickForce : MonoBehaviour
 {
 	public GameObject _stick;
 	private Vector3 _pushForce;
+	public float _force = 180;
 	
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		_pushForce = _stick.gameObject.transform.position;
 	}
 
 	private void OnCollisionEnter(Collision other)
@@ -23,7 +22,7 @@ public class StickForce : MonoBehaviour
 		
 		if (other.gameObject.GetComponent<MeshFilter>().sharedMesh.name.Equals("Cylinder"))
 		{
-			gameObject.GetComponent<Rigidbody>().AddTorque(_pushForce, ForceMode.Impulse);
+			gameObject.GetComponent<Rigidbody>().AddTorque(other.rigidbody.velocity * _force, ForceMode.Impulse);
 		}
 	}
 }

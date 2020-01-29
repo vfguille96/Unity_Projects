@@ -9,6 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="Holes.cs" t="Include" />
           <e p="StickForce.cs" t="Include" />
+          <e p="StickImpulse.cs" t="Include" />
         </e>
       </e>
       <e p="Ejercicio_1.sln" t="IncludeFlat" />

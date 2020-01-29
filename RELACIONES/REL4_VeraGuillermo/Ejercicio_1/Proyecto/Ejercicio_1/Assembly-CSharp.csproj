@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Holes.cs" />
     <Compile Include="Assets\Scripts\StickForce.cs" />
+    <Compile Include="Assets\Scripts\StickImpulse.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/vfgui/OneDrive/Documentos/Unity Projects/RELACIONES/REL4_VeraGuillermo/Ejercicio_1/Proyecto/Ejercicio_1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
