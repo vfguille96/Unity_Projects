@@ -8,7 +8,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BotonesMenu.cs" t="Include" />
+          <e p="Disparo.cs" t="Include" />
           <e p="MoverCamaraFP.cs" t="Include" />
+          <e p="MoverJugador.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
