@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\alumno1920\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\alumno1920\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_GUI_Layout.1796702537.00" t="ExcludeRecursive" />
+    <e p="C:\Users\alumno1920\Documents\Unity_Projects\CLASE\GUI_Layout" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="GUILayoutController.cs" t="Include" />
+      </e>
+      <e p="GUI_Layout.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
