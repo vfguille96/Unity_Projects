@@ -558,7 +558,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.32
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1083,7 +1083,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.0017453891
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1091,7 +1091,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999985
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_RootOrder
@@ -1099,7 +1099,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_LocalScale.x
@@ -1111,15 +1111,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400050, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 912bbc44de8ed1047b4f0d3ea38abc90, type: 3}
       propertyPath: m_RootOrder

@@ -44,13 +44,12 @@ public class MoverCamaraFP : MonoBehaviour
     {
         if (_invertirEjeY)
         {
-            
-            transform.eulerAngles += new Vector3(Mathf.Clamp(Input.GetAxis("Mouse Y") * sensibilidad_Y, -30.5F, 86F),
+            transform.eulerAngles += new Vector3(Mathf.Clamp(Input.GetAxis("Mouse Y") * sensibilidad_Y, -30.5F, 41F),
                 Input.GetAxis("Mouse X") * _sensibilidad_X, 0);
         }
         else
         {
-            transform.eulerAngles += new Vector3(Mathf.Clamp(-Input.GetAxis("Mouse Y") * sensibilidad_Y, -30.5F, 86F),
+            transform.eulerAngles += new Vector3(Mathf.Clamp(-Input.GetAxis("Mouse Y") * sensibilidad_Y, -30.5F, 41F),
                 Input.GetAxis("Mouse X") * _sensibilidad_X, 0);
         }
     }

@@ -4,32 +4,29 @@ using UnityEngine;
 
 public class Disparo : MonoBehaviour
 {
-    private GameObject _gameObject;
+    private GameObject _pistola;
+    private GameObject _camara;
 
     // Use this for initialization
     void Start()
     {
-        _gameObject = GameObject.Find("w_pist_deagle");
+        _pistola = GameObject.Find("w_pist_deagle");
+        _camara = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
         StartCoroutine(DisparoEagle());
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            _gameObject.GetComponent<Animator>().enabled = true;
-            _gameObject.GetComponent<Animator>().Play("Eagle2", 1, 1);
-        }*/
     }
 
     private IEnumerator DisparoEagle()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            _gameObject.GetComponent<AudioSource>().Play();
-            _gameObject.GetComponent<Animator>().enabled = true;
-            _gameObject.GetComponent<Animator>().Play("Eagle2", 0, 0.25F);
+            _pistola.GetComponent<AudioSource>().Play();
+            _pistola.GetComponent<Animator>().enabled = true;
+            _pistola.GetComponent<Animator>().Play("Eagle2", 0, 0.25F);
         }
 
         yield return null;
