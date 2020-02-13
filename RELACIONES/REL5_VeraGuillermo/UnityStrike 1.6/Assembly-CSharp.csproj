@@ -59,13 +59,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BotonesMenu.cs" />
-    <Compile Include="Assets\Scripts\Disparo.cs" />
     <Compile Include="Assets\Scripts\EJ_1_2_3_4\CambiarColorColision.cs" />
     <Compile Include="Assets\Scripts\EJ_1_2_3_4\MensajeGUILabel.cs" />
-    <Compile Include="Assets\Scripts\MoverCamaraFP.cs" />
-    <Compile Include="Assets\Scripts\MoverJugador.cs" />
-    <Compile Include="Assets\Scripts\SalirJuego.cs" />
+    <Compile Include="Assets\Scripts\Juego\BotonesMenu.cs" />
+    <Compile Include="Assets\Scripts\Juego\Disparo.cs" />
+    <Compile Include="Assets\Scripts\Juego\GameController.cs" />
+    <Compile Include="Assets\Scripts\Juego\InicializarComponentesJuego.cs" />
+    <Compile Include="Assets\Scripts\Juego\MoverCamaraFP.cs" />
+    <Compile Include="Assets\Scripts\Juego\MoverJugador.cs" />
+    <Compile Include="Assets\Scripts\Juego\SalirJuego.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
