@@ -3,31 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SalirJuego : MonoBehaviour
 {
     private bool _ocultar;
     private Canvas _canvasMenu;
-    private TextMeshProUGUI _healthUI;
+    private TextMeshProUGUI _NombreJugadorUI;
+    private Button _BtVolver;
+    private Button _BtSalir;
 
     // Use this for initialization
     void Start()
     {
         _canvasMenu = GameObject.Find("CanvasMenu").gameObject.GetComponent<Canvas>();
-        _healthUI = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
+        _BtVolver = GameObject.Find("BtVolver").GetComponent<Button>();
+        _BtSalir = GameObject.Find("BtSalir").GetComponent<Button>();
+        _NombreJugadorUI = GameObject.Find("TMJugador").GetComponent<TextMeshProUGUI>();
+        _BtSalir.onClick.AddListener(VolverMenuPrincipal);
+        _BtVolver.onClick.AddListener(VolverJuego);
         _ocultar = false;
         SetCanvasVisible(false);
-        InicializarComponentesCanvasMenu();
-        
     }
 
     private void InicializarComponentesCanvasMenu()
     {
-        _canvasMenu.GetComponentInChildren<TextMeshProUGUI>().text = GameController.NombreJugador;
+        _NombreJugadorUI.text = GameController.NombreJugador;
+        Debug.Log("CANVAS NOMBRE JUGADOR: " + GameController.NombreJugador);
     }
+
     private void InicializarComponentesCanvasUI()
     {
-        _healthUI.text = "+ " + GameController.Vida;
         Debug.Log(GameController.Vida);
     }
 
@@ -49,19 +56,55 @@ public class SalirJuego : MonoBehaviour
     private void SalirJuegoMenu()
     {
         if (_ocultar)
-        {
-            SetCanvasVisible(true);
-            _ocultar = !_ocultar;
-            Time.timeScale = 0;
-            GameController.TiempoPausado = true;
-        }
+            MostrarMenuSalir();
         else
-        {
-            SetCanvasVisible(false);
-            _ocultar = !_ocultar;
-            Time.timeScale = 1;
-            GameController.TiempoPausado = false;
-            
-        }
+            OcultarMenuSalir();
+    }
+
+    private void MostrarMenuSalir()
+    {
+        MostrarCursor();
+        InicializarComponentesCanvasMenu();
+        SetCanvasVisible(true);
+        _ocultar = !_ocultar;
+        Time.timeScale = 0;
+        GameController.TiempoPausado = true;
+    }
+
+    private void OcultarMenuSalir()
+    {
+        OcultarCursor();
+        SetCanvasVisible(false);
+        _ocultar = !_ocultar;
+        Time.timeScale = 1;
+        GameController.TiempoPausado = false;
+    }
+
+    private void VolverJuego()
+    {
+        OcultarMenuSalir();
+    }
+
+    private void VolverMenuPrincipal()
+    {
+        OcultarMenuSalir();
+        MostrarCursor();
+        SceneManager.LoadScene("Menu");
+    }
+    
+    /// <summary>
+    /// Muestra el cursor en la ventana principal de ejecución.
+    /// </summary>
+    private static void MostrarCursor()
+    {
+        Cursor.visible = true;
+    }
+    
+    /// <summary>
+    /// Oculta el cursor en la ventana principal de ejecución.
+    /// </summary>
+    private static void OcultarCursor()
+    {
+        Cursor.visible = false;
     }
 }

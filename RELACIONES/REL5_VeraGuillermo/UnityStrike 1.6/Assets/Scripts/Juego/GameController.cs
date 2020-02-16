@@ -14,7 +14,12 @@ public static class GameController
     // 7 / 35 --> 42
     public static int BalasCargador { get; set; }
     
+    public static int BalasTotales { get; set; }
+    
+    public static int BalasRestantes { get; set; }
+    
     public static int Vida { get; set; }
     
+    public static float TiempoJuego { get; set; }
     
 }

@@ -34,6 +34,11 @@ public class MensajeGUILabel : MonoBehaviour
 
 	private void Update()
 	{
+		MostrarV();
+	}
+
+	private void MostrarV()
+	{
 		if (Input.GetKeyUp(KeyCode.Space))
 			visualizarVentana = !visualizarVentana;
 	}
