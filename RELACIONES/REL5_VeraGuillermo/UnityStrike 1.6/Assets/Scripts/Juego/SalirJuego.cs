@@ -27,15 +27,22 @@ public class SalirJuego : MonoBehaviour
         SetCanvasVisible(false);
     }
 
+    /// <summary>
+    /// Inicialización de componentes del Menú de Pausa.
+    /// </summary>
     private void InicializarComponentesCanvasMenu()
+    {
+        MostrarNombreJugador();
+    }
+
+    /// <summary>
+    /// Muestra el nombre del jugador, previamente solicitado.
+    /// Por defecto se muestra el nombre "Jugador 1".
+    /// </summary>
+    private void MostrarNombreJugador()
     {
         _NombreJugadorUI.text = GameController.NombreJugador;
         Debug.Log("CANVAS NOMBRE JUGADOR: " + GameController.NombreJugador);
-    }
-
-    private void InicializarComponentesCanvasUI()
-    {
-        Debug.Log(GameController.Vida);
     }
 
     private void SetCanvasVisible(bool estado)
@@ -46,11 +53,8 @@ public class SalirJuego : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InicializarComponentesCanvasUI();
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
             SalirJuegoMenu();
-        }
     }
 
     private void SalirJuegoMenu()
@@ -61,6 +65,9 @@ public class SalirJuego : MonoBehaviour
             OcultarMenuSalir();
     }
 
+    /// <summary>
+    /// Muestra el Menú Pausa y pausa el tiempo.
+    /// </summary>
     private void MostrarMenuSalir()
     {
         MostrarCursor();
@@ -71,6 +78,9 @@ public class SalirJuego : MonoBehaviour
         GameController.TiempoPausado = true;
     }
 
+    /// <summary>
+    /// Oculta el Menú Pausa y reanuda el tiempo pausado.
+    /// </summary>
     private void OcultarMenuSalir()
     {
         OcultarCursor();
@@ -85,6 +95,9 @@ public class SalirJuego : MonoBehaviour
         OcultarMenuSalir();
     }
 
+    /// <summary>
+    /// Carga la escena Menú Principal.
+    /// </summary>
     private void VolverMenuPrincipal()
     {
         OcultarMenuSalir();
