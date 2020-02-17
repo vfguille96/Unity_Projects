@@ -5,15 +5,22 @@ using UnityEngine;
 public class Disparo : MonoBehaviour
 {
     private GameObject _pistola;
+    private Transform _camera;
     public AudioClip _recargar;
     public AudioClip _disparo;
     public AudioClip _noBalas;
+    private AudioSource _audioPistola;
+    private Animator _animacionPistola;
+    private RaycastHit[] HitInfo;
     private bool _recargando;
 
     // Use this for initialization
     void Start()
     {
         _pistola = GameObject.Find("w_pist_deagle");
+        _camera = GameObject.Find("Main Camera").GetComponent<Camera>().transform;
+        _audioPistola = _pistola.GetComponent<AudioSource>();
+        _animacionPistola = _pistola.GetComponent<Animator>();
         _recargando = false;
     }
 
@@ -29,12 +36,27 @@ public class Disparo : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && GameController.BalasTotales > 0)
         {
+            GameController.Disparo = true;
+            var position = _camera.position;
+            var forward = _camera.forward;
+            Debug.DrawRay(position, forward * 100, Color.red);
+            HitInfo = Physics.RaycastAll(position, forward * 100);
+
+            Debug.Log(GameController.Disparo);
+            if (HitInfo[0].collider.gameObject.tag.Equals("Enemigo") && GameController.Disparo && !_recargando)
+            {
+                Debug.Log(HitInfo[0].collider.name);
+                Debug.Log(HitInfo[0].distance);
+                Debug.Log(GameController.Disparo);
+                Destroy(HitInfo[0].collider.gameObject, 0.2F);
+            }
+
             // Sonido y animación de disparo.
-            _pistola.GetComponent<AudioSource>().clip = _disparo;
-            _pistola.GetComponent<AudioSource>().Play();
-            _pistola.GetComponent<Animator>().enabled = true;
-            _pistola.GetComponent<Animator>().Play("Eagle2", 0, 0.25F);
-            
+            _audioPistola.clip = _disparo;
+            _audioPistola.Play();
+            _animacionPistola.enabled = true;
+            _animacionPistola.Play("Eagle2", 0, 0.25F);
+
             // Resta una bala.
             GameController.BalasCargador -= 1;
             GameController.BalasTotales -= 1;
@@ -46,11 +68,11 @@ public class Disparo : MonoBehaviour
                 {
                     _recargando = true;
                     yield return new WaitForSecondsRealtime(0.3F);
-                    _pistola.GetComponent<Animator>().enabled = true;
-                    _pistola.GetComponent<Animator>().Play("EagleRecargar", 0, 0.25F);
-                    _pistola.GetComponent<AudioSource>().clip = _recargar;
-                    _pistola.GetComponent<AudioSource>().Play();
-                    
+                    _animacionPistola.enabled = true;
+                    _animacionPistola.Play("EagleRecargar", 0, 0.25F);
+                    _audioPistola.clip = _recargar;
+                    _audioPistola.Play();
+
                     yield return new WaitForSecondsRealtime(1.5F);
                     _recargando = false;
                 }
@@ -60,7 +82,7 @@ public class Disparo : MonoBehaviour
                 if (GameController.BalasRestantes != 0)
                     GameController.BalasRestantes -= 7;
             }
-            
+
             // Actualiza las BalasCargador cuando las BalasTotales son 0.
             if (GameController.BalasTotales == 0)
             {
@@ -72,10 +94,11 @@ public class Disparo : MonoBehaviour
         // No hay BalasTotales.
         if (Input.GetMouseButtonDown(0) && GameController.BalasTotales == 0)
         {
-            _pistola.GetComponent<AudioSource>().clip = _noBalas;
-            _pistola.GetComponent<AudioSource>().Play();
+            _audioPistola.clip = _noBalas;
+            _audioPistola.Play();
         }
 
-        yield return null;
+        yield return new WaitForSecondsRealtime(0.3F);
+        GameController.Disparo = false;
     }
 }

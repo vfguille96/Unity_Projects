@@ -19,6 +19,7 @@
             <e p="InicializarComponentesJuego.cs" t="Include" />
             <e p="MoverCamaraFP.cs" t="Include" />
             <e p="MoverJugador.cs" t="Include" />
+            <e p="RayoPistola.cs" t="Include" />
             <e p="SalirJuego.cs" t="Include" />
           </e>
         </e>

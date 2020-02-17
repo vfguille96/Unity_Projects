@@ -5,6 +5,9 @@ using UnityEngine;
 public static class GameController
 {
     public static bool TiempoPausado { get; set; }
+    
+    public const float DISTANCIA_MAX_SUELO_SALTO = 1.2F;
+    public static bool Disparo { get; set; }
     public static string NombreJugador { get; set; }
 
     public static string ApellidosJugador { get; set; }

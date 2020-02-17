@@ -9,16 +9,15 @@ public class MoverJugador : MonoBehaviour
     private Rigidbody _rigidbody;
     public float _vel;
     public float _salto;
-    private static bool _suelo;
     public GameObject _camara;
     private GameObject _cuerpo;
+    private RaycastHit[] HitInfo;
 
     // Use this for initialization
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _cuerpo = GameObject.Find("arctic_Armature");
-        _suelo = true;
     }
 
     // Update is called once per frame
@@ -27,6 +26,8 @@ public class MoverJugador : MonoBehaviour
         BloquearRotacionEjeZJugador();
         RotarCuerpoPersonaje();
         Salto();
+
+       
     }
 
     /// <summary>
@@ -47,12 +48,23 @@ public class MoverJugador : MonoBehaviour
 
     /// <summary>
     /// Salto del jugador. Se aplica una fuerza física.
+    /// Se comprueba que la distancia del jugador con el suelo a través de un Rayo.
     /// </summary>
     private void Salto()
     {
-        // Se comprueba si el jugador está en el suelo para realizar el salto.
-        if (Input.GetKeyDown(KeyCode.Space) && _suelo)
-            _rigidbody.AddForce(transform.up * _salto);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            var position = transform.position;
+            Debug.DrawRay(position, Vector3.down * 10, Color.green);
+            HitInfo = Physics.RaycastAll(position, Vector3.down * 10);
+
+            if (HitInfo[0].collider.name.Equals("dust2_map") && HitInfo[0].distance < GameController.DISTANCIA_MAX_SUELO_SALTO)
+            {
+                Debug.Log(HitInfo[0].collider.name);
+                Debug.Log(HitInfo[0].distance);
+                _rigidbody.AddForce(transform.up * _salto);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -67,22 +79,5 @@ public class MoverJugador : MonoBehaviour
     {
         _rigidbody.MovePosition(transform.position + _camara.transform.forward * (Input.GetAxis("Vertical") * _vel) +
                                 _camara.transform.right * (Input.GetAxis("Horizontal") * _vel));
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-        Debug.Log(other.gameObject.name);
-        if (other.gameObject.name.Equals("dust2_map"))
-            _suelo = true;
-        else
-            _suelo = false;
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.name.Equals("dust2_map"))
-            _suelo = false;
-        else
-            _suelo = true;
     }
 }

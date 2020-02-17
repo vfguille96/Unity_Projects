@@ -78,7 +78,7 @@ public class InicializarComponentesJuego : MonoBehaviour
         _tiempoJuegoActual = tiempoJuego;
         while (_tiempoJuegoActual > 0)
         {
-            Debug.Log("Cuenta atrás: " + _tiempoJuegoActual);
+            //Debug.Log("Cuenta atrás: " + _tiempoJuegoActual);
             yield return new WaitForSeconds(1.0f);
             _tiempoJuegoActual--;
             _timeSpan = TimeSpan.FromSeconds(_tiempoJuegoActual);
