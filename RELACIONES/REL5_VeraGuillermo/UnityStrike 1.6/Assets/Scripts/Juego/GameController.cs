@@ -25,4 +25,6 @@ public static class GameController
     
     public static float TiempoJuego { get; set; }
     
+    public static float TiempoJuegoRestante { get; set; }
+    
 }

@@ -55,6 +55,10 @@ public class SalirJuego : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             SalirJuegoMenu();
+
+        /*if (GameController.TiempoJuegoRestante == 0 && GameController.TiempoJuego != 0)
+            MostrarMenuSalir();*/
+
     }
 
     private void SalirJuegoMenu()
@@ -73,7 +77,7 @@ public class SalirJuego : MonoBehaviour
         MostrarCursor();
         InicializarComponentesCanvasMenu();
         SetCanvasVisible(true);
-        _ocultar = !_ocultar;
+        _ocultar = false;
         Time.timeScale = 0;
         GameController.TiempoPausado = true;
     }
@@ -85,7 +89,7 @@ public class SalirJuego : MonoBehaviour
     {
         OcultarCursor();
         SetCanvasVisible(false);
-        _ocultar = !_ocultar;
+        _ocultar = true;
         Time.timeScale = 1;
         GameController.TiempoPausado = false;
     }

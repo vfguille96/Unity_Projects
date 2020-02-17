@@ -5,6 +5,7 @@ using UnityEngine;
 public class Disparo : MonoBehaviour
 {
     private GameObject _pistola;
+    public GameObject _particula;
     private Transform _camera;
     public AudioClip _recargar;
     public AudioClip _disparo;
@@ -22,6 +23,7 @@ public class Disparo : MonoBehaviour
         _audioPistola = _pistola.GetComponent<AudioSource>();
         _animacionPistola = _pistola.GetComponent<Animator>();
         _recargando = false;
+        _particula.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,17 +45,22 @@ public class Disparo : MonoBehaviour
             HitInfo = Physics.RaycastAll(position, forward * 100);
 
             Debug.Log(GameController.Disparo);
-            if (HitInfo[0].collider.gameObject.tag.Equals("Enemigo") && GameController.Disparo && !_recargando)
+            if (HitInfo[0].collider.gameObject.tag.Equals("Enemigo") && !_recargando)
             {
                 Debug.Log(HitInfo[0].collider.name);
                 Debug.Log(HitInfo[0].distance);
                 Debug.Log(GameController.Disparo);
-                Destroy(HitInfo[0].collider.gameObject, 0.2F);
+                Destroy(HitInfo[0].collider.gameObject, 0.1F);
+                foreach (var VARIABLE in HitInfo)
+                {
+                    Debug.Log("PRUEBAAA: " + VARIABLE.collider.name);
+                }
             }
 
             // Sonido y animación de disparo.
             _audioPistola.clip = _disparo;
             _audioPistola.Play();
+            StartCoroutine(ParticulaFuego());
             _animacionPistola.enabled = true;
             _animacionPistola.Play("Eagle2", 0, 0.25F);
 
@@ -97,8 +104,20 @@ public class Disparo : MonoBehaviour
             _audioPistola.clip = _noBalas;
             _audioPistola.Play();
         }
-
-        yield return new WaitForSecondsRealtime(0.3F);
+        
         GameController.Disparo = false;
+        yield return null;
+    }
+
+    /// <summary>
+    /// Corrutina que es ejecutada cuando se produce un disparo.
+    /// Partícula de fuego.
+    /// </summary>
+    /// <returns>WaitForSeconds()</returns>
+    private IEnumerator ParticulaFuego()
+    {
+        _particula.SetActive(true);
+        yield return new WaitForSeconds(0.07F);
+        _particula.SetActive(false);
     }
 }

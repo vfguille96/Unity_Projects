@@ -43,7 +43,7 @@ public class InicializarComponentesJuego : MonoBehaviour
         _healthUI = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
         _bullethUI = GameObject.Find("Bullet").GetComponent<TextMeshProUGUI>();
         _TimeUI = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
-        StartCoroutine(EmpezarCuentaAtras(GameController.TiempoJuego = 200));
+        StartCoroutine(EmpezarCuentaAtras(GameController.TiempoJuego = 20));
        
     }
 
@@ -76,11 +76,13 @@ public class InicializarComponentesJuego : MonoBehaviour
     public IEnumerator EmpezarCuentaAtras(float tiempoJuego)
     {
         _tiempoJuegoActual = tiempoJuego;
+        GameController.TiempoJuegoRestante = _tiempoJuegoActual;
         while (_tiempoJuegoActual > 0)
         {
             //Debug.Log("Cuenta atrás: " + _tiempoJuegoActual);
             yield return new WaitForSeconds(1.0f);
             _tiempoJuegoActual--;
+            GameController.TiempoJuegoRestante = _tiempoJuegoActual;
             _timeSpan = TimeSpan.FromSeconds(_tiempoJuegoActual);
         }
         
