@@ -60,6 +60,7 @@ public class Disparo : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && GameController.BalasTotales > 0)
         {
+            int i = 0;
             GameController.Disparo = true;
             var position = _camera.position;
             var forward = _camera.forward;
@@ -76,8 +77,10 @@ public class Disparo : MonoBehaviour
                 Destroy(HitInfo[0].collider.gameObject, 0.1F);
                 foreach (var VARIABLE in HitInfo)
                 {
-                    Debug.Log("PRUEBAAA: " + VARIABLE.collider.name);
+                    Debug.Log("[" + i++ + "] PRUEBAAA: " + VARIABLE.collider.name);
                 }
+
+                HitInfo = null;
             }
 
             // Sonido y animación de disparo.
@@ -127,7 +130,7 @@ public class Disparo : MonoBehaviour
             _audioPistola.clip = _noBalas;
             _audioPistola.Play();
         }
-        
+
         GameController.Disparo = false;
         yield return null;
     }

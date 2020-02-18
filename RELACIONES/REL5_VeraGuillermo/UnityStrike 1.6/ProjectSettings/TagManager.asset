@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zona
   - Enemigo
+  - Municion
   layers:
   - Default
   - TransparentFX

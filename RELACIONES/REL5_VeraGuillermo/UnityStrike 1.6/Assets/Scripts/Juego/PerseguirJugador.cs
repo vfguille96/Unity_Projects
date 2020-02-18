@@ -18,9 +18,10 @@ public class PerseguirJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(jugador.position);
         if (GameController.Vida <= 0)
             navMeshAgent.enabled = false;
+        else
+            navMeshAgent.SetDestination(jugador.position);
     }
 
     private IEnumerator QuitarVidaJugador()

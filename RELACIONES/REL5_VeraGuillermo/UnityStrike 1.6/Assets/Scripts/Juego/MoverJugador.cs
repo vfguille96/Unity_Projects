@@ -26,8 +26,6 @@ public class MoverJugador : MonoBehaviour
         BloquearRotacionEjeZJugador();
         RotarCuerpoPersonaje();
         Salto();
-
-       
     }
 
     /// <summary>
@@ -58,7 +56,8 @@ public class MoverJugador : MonoBehaviour
             Debug.DrawRay(position, Vector3.down * 10, Color.green);
             HitInfo = Physics.RaycastAll(position, Vector3.down * 10);
 
-            if (HitInfo[0].collider.name.Equals("dust2_map") && HitInfo[0].distance < GameController.DISTANCIA_MAX_SUELO_SALTO)
+            if (HitInfo[0].collider.name.Equals("dust2_map") &&
+                HitInfo[0].distance < GameController.DISTANCIA_MAX_SUELO_SALTO)
             {
                 Debug.Log(HitInfo[0].collider.name);
                 Debug.Log(HitInfo[0].distance);
@@ -79,5 +78,28 @@ public class MoverJugador : MonoBehaviour
     {
         _rigidbody.MovePosition(transform.position + _camara.transform.forward * (Input.GetAxis("Vertical") * _vel) +
                                 _camara.transform.right * (Input.GetAxis("Horizontal") * _vel));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Municion"))
+        {
+            if (GameController.BalasTotales <= 35)
+            {
+                other.gameObject.GetComponent<AudioSource>().Play();
+                if (GameController.BalasCargador == 0)
+                {
+                    GameController.BalasCargador += 7;
+                    GameController.BalasTotales += 7;
+                }
+                else
+                {
+                    GameController.BalasRestantes += 7;
+                    GameController.BalasTotales += 7;
+                }
+
+                Destroy(other.gameObject, 0.5F);
+            }
+        }
     }
 }
