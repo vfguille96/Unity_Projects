@@ -68,19 +68,22 @@ public class Disparo : MonoBehaviour
             HitInfo = Physics.RaycastAll(position, forward * 100);
 
             Debug.Log(GameController.Disparo);
-            if (HitInfo[0].collider.gameObject.tag.Equals("Enemigo") && !_recargando)
-            {
-                Debug.Log(HitInfo[0].collider.name);
-                Debug.Log(HitInfo[0].distance);
-                Debug.Log(GameController.Disparo);
-                HitInfo[0].collider.gameObject.GetComponent<AudioSource>().Play();
-                Destroy(HitInfo[0].collider.gameObject, 0.1F);
-                foreach (var VARIABLE in HitInfo)
-                {
-                    Debug.Log("[" + i++ + "] PRUEBAAA: " + VARIABLE.collider.name);
-                }
 
-                HitInfo = null;
+            if (HitInfo.Length != 0)
+            {
+                foreach (var ENEMIGO in HitInfo)
+                {
+                    if (ENEMIGO.collider.gameObject.tag.Equals("Enemigo") && !_recargando)
+                    {
+                        Debug.Log(ENEMIGO.collider.name);
+                        Debug.Log(ENEMIGO.distance);
+                        Debug.Log(GameController.Disparo);
+                        ENEMIGO.collider.gameObject.GetComponent<AudioSource>().Play();
+                        Destroy(ENEMIGO.collider.gameObject, 0.1F);
+                    }
+
+                    Debug.Log("[" + i++ + "] PRUEBAAA: " + ENEMIGO.collider.name);
+                }
             }
 
             // Sonido y animación de disparo.

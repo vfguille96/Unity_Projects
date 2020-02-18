@@ -19,13 +19,10 @@ public class ParpadeoLuzMunicion : MonoBehaviour
     public float maxIntensidad = 3.0f;
     public bool repetirIntensidad = true;
 
-    float _startTime;
-
     // Use this for initialization
     void Start()
     {
         _light = GetComponent<Light>();
-        _startTime = Time.time;
     }
 
     // Update is called once per frame

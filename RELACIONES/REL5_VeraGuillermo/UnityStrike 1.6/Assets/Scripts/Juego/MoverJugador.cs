@@ -80,6 +80,10 @@ public class MoverJugador : MonoBehaviour
                                 _camara.transform.right * (Input.GetAxis("Horizontal") * _vel));
     }
 
+    /// <summary>
+    /// Lógica de munición.
+    /// </summary>
+    /// <param name="other">Objeto impactado en la colisión.</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Municion"))

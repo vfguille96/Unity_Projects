@@ -106,6 +106,7 @@ public class SalirJuego : MonoBehaviour
     {
         OcultarMenuSalir();
         MostrarCursor();
+        StopAllCoroutines();
         SceneManager.LoadScene("Menu");
     }
     
