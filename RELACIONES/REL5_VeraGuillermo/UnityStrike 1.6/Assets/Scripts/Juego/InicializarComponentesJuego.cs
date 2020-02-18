@@ -68,6 +68,8 @@ public class InicializarComponentesJuego : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameController.Vida < 0)
+            GameController.Vida = 0;
         _healthUI.text = "+ " + GameController.Vida;
         _bullethUI.text = GameController.BalasCargador + "/" + GameController.BalasRestantes;
         _TimeUI.text = string.Format("{0:D1}:{1:D2}", _timeSpan.Minutes, _timeSpan.Seconds);

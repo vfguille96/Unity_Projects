@@ -14,6 +14,7 @@ public class Disparo : MonoBehaviour
     private Animator _animacionPistola;
     private RaycastHit[] HitInfo;
     private bool _recargando;
+    private bool _zoom;
 
     // Use this for initialization
     void Start()
@@ -23,6 +24,7 @@ public class Disparo : MonoBehaviour
         _audioPistola = _pistola.GetComponent<AudioSource>();
         _animacionPistola = _pistola.GetComponent<Animator>();
         _recargando = false;
+        _zoom = false;
         _particula.SetActive(false);
     }
 
@@ -34,8 +36,23 @@ public class Disparo : MonoBehaviour
             StartCoroutine(DisparoEagle());
 
         if (Input.GetMouseButtonDown(1))
+            ZoomApuntar();
+    }
+
+    /// <summary>
+    /// Zoom de la cámara para apuntar.
+    /// </summary>
+    private void ZoomApuntar()
+    {
+        if (!_zoom)
         {
             _camera.GetComponent<Camera>().fieldOfView = 40;
+            _zoom = true;
+        }
+        else
+        {
+            _camera.GetComponent<Camera>().fieldOfView = 60;
+            _zoom = false;
         }
     }
 
@@ -55,6 +72,7 @@ public class Disparo : MonoBehaviour
                 Debug.Log(HitInfo[0].collider.name);
                 Debug.Log(HitInfo[0].distance);
                 Debug.Log(GameController.Disparo);
+                HitInfo[0].collider.gameObject.GetComponent<AudioSource>().Play();
                 Destroy(HitInfo[0].collider.gameObject, 0.1F);
                 foreach (var VARIABLE in HitInfo)
                 {

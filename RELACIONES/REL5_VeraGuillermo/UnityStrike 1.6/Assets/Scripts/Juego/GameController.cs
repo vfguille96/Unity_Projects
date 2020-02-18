@@ -5,8 +5,13 @@ using UnityEngine;
 public static class GameController
 {
     public static bool TiempoPausado { get; set; }
-    
+
     public const float DISTANCIA_MAX_SUELO_SALTO = 1.2F;
+
+    public const float DISTANCIA_MIN_ATAQUE = 1.3F;
+    
+    public const int ROBO_VIDA_L1 = 15;
+
     public static bool Disparo { get; set; }
     public static string NombreJugador { get; set; }
 
@@ -16,15 +21,14 @@ public static class GameController
 
     // 7 / 35 --> 42
     public static int BalasCargador { get; set; }
-    
+
     public static int BalasTotales { get; set; }
-    
+
     public static int BalasRestantes { get; set; }
-    
+
     public static int Vida { get; set; }
-    
+
     public static float TiempoJuego { get; set; }
-    
+
     public static float TiempoJuegoRestante { get; set; }
-    
 }
