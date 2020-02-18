@@ -32,6 +32,11 @@ public class Disparo : MonoBehaviour
         // Se produce un disparo cuando el tiempo no está pausado y no se está recargando.
         if (!GameController.TiempoPausado && !_recargando)
             StartCoroutine(DisparoEagle());
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            _camera.GetComponent<Camera>().fieldOfView = 40;
+        }
     }
 
     private IEnumerator DisparoEagle()
