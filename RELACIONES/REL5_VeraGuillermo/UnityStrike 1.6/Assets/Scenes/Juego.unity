@@ -1042,7 +1042,7 @@ GameObject:
   - component: {fileID: 618911678}
   - component: {fileID: 618911677}
   m_Layer: 5
-  m_Name: BtSalir
+  m_Name: BtSalirPartidaTerminada
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TMEnemigosEliminados: {fileID: 1545265609}
   _btEmpezarPartida: {fileID: 824167134}
-  _btSalir: {fileID: 618911677}
+  _btSalirPartidaTerminada: {fileID: 618911677}
 --- !u!1 &1211844283
 GameObject:
   m_ObjectHideFlags: 0

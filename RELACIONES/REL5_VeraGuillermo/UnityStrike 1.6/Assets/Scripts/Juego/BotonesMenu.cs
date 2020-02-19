@@ -21,6 +21,8 @@ public class BotonesMenu : MonoBehaviour
 	/// </summary>
 	public void BtNuevaPartida()
 	{
+		GameController.TiempoPausado = false;
+		Time.timeScale = 1;
 		SceneManager.LoadScene("Juego");
 	}
 	

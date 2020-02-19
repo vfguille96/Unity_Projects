@@ -11,13 +11,13 @@ public class TerminarPartida : MonoBehaviour
 	private Canvas _canvas;
 	public TextMeshProUGUI _TMEnemigosEliminados;
 	public Button _btEmpezarPartida;
-	public Button _btSalir;
+	public Button _btSalirPartidaTerminada;
 	
 
 	// Use this for initialization
 	void Start () {
 		_btEmpezarPartida.onClick.AddListener(CargarEscenaJuego);
-		_btEmpezarPartida.onClick.AddListener(VolverMenuPrincipal);
+		_btSalirPartidaTerminada.onClick.AddListener(VolverMenuPrincipal);
 		_canvas = GameObject.Find("CanvasPartidaTerminada").GetComponent<Canvas>();
 		_canvas.gameObject.SetActive(false);
 	}
@@ -27,12 +27,11 @@ public class TerminarPartida : MonoBehaviour
 		if (GameController.TiempoJuegoRestante == 0 || GameController.Vida == 0)
 		{
 			_canvas.gameObject.SetActive(true);
-			_TMEnemigosEliminados.GetComponent<Text>().text =
+			_TMEnemigosEliminados.text =
 				"ENEMIGOS ELIMINADOS: \n\n" + GameController.NumeroEnemigosEliminados;
-			Time.timeScale = 0;
 			GameController.TiempoPausado = true;
+			Time.timeScale = 0;
 			Cursor.visible = true;
-			StopAllCoroutines();
 		}
 	}
 	
@@ -43,6 +42,8 @@ public class TerminarPartida : MonoBehaviour
 
 	private void CargarEscenaJuego()
 	{
+		GameController.TiempoPausado = false;
+		Time.timeScale = 1;
 		SceneManager.LoadScene("Juego");
 	}
 }
