@@ -33,6 +33,11 @@ public class InicializarComponentesJuego : MonoBehaviour
     {
         get { return 35; }
     }
+    
+    private static int NumeroEnemigosEliminados
+    {
+        get { return 0; }
+    }
 
     // Use this for initialization
     void Start()
@@ -40,6 +45,7 @@ public class InicializarComponentesJuego : MonoBehaviour
         EstablecerVidaJugador();
         EstablecerNombreJugadorPorDefecto();
         EstablecerBalas();
+        EstablecerEnemigosEliminados();
         _healthUI = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
         _bullethUI = GameObject.Find("Bullet").GetComponent<TextMeshProUGUI>();
         _TimeUI = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
@@ -50,6 +56,11 @@ public class InicializarComponentesJuego : MonoBehaviour
     private static void EstablecerVidaJugador()
     {
         GameController.Vida = Vida;
+    }
+    
+    private static void EstablecerEnemigosEliminados()
+    {
+        GameController.NumeroEnemigosEliminados = NumeroEnemigosEliminados;
     }
 
     private static void EstablecerNombreJugadorPorDefecto()

@@ -60,7 +60,7 @@ public class Disparo : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && GameController.BalasTotales > 0)
         {
-            int i = 0;
+            
             GameController.Disparo = true;
             var position = _camera.position;
             var forward = _camera.forward;
@@ -71,12 +71,17 @@ public class Disparo : MonoBehaviour
 
             if (HitInfo.Length != 0)
             {
+                // Boolean para eliminar sólo al primero enemigo.
+                bool enemigoEliminado = false;
+                int i = 0;
                 foreach (var ENEMIGO in HitInfo)
                 {
-                    if (ENEMIGO.collider.gameObject.tag.Equals("Enemigo") && !_recargando)
+                    if (ENEMIGO.collider.gameObject.tag.Equals("Enemigo") && !_recargando && !enemigoEliminado)
                     {
                         Debug.Log(ENEMIGO.collider.name);
                         Debug.Log(ENEMIGO.distance);
+                        enemigoEliminado = true;
+                        GameController.NumeroEnemigosEliminados++;
                         Debug.Log(GameController.Disparo);
                         ENEMIGO.collider.gameObject.GetComponent<AudioSource>().Play();
                         Destroy(ENEMIGO.collider.gameObject, 0.1F);
