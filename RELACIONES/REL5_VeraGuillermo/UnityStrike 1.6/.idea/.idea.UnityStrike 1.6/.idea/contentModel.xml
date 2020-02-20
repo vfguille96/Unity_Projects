@@ -15,12 +15,14 @@
           <e p="Juego" t="Include">
             <e p="BotonesMenu.cs" t="Include" />
             <e p="Disparo.cs" t="Include" />
+            <e p="EstablecerNivelesMenu.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="InicializarComponentesJuego.cs" t="Include" />
             <e p="MoverCamaraFP.cs" t="Include" />
             <e p="MoverJugador.cs" t="Include" />
             <e p="ParpadeoLuzMunicion.cs" t="Include" />
             <e p="PerseguirJugador.cs" t="Include" />
+            <e p="ReaparecerEnemigos.cs" t="Include" />
             <e p="SalirJuego.cs" t="Include" />
             <e p="TerminarPartida.cs" t="Include" />
           </e>

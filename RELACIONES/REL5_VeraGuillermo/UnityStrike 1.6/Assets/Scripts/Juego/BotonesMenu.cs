@@ -10,12 +10,7 @@ public class BotonesMenu : MonoBehaviour
 	void Start () {
 		ActivarCanvasOpciones(false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
+
 	/// <summary>
 	/// Carga la escena Juego
 	/// </summary>

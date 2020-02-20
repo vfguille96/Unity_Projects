@@ -189,7 +189,6 @@ GameObject:
   - component: {fileID: 114436381483571606}
   - component: {fileID: 195209436907006384}
   - component: {fileID: 82703052612578504}
-  - component: {fileID: 143747500074959858}
   m_Layer: 0
   m_Name: sas
   m_TagString: Enemigo
@@ -789,7 +788,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015780890108256}
-  m_LocalRotation: {x: -0.014928979, y: 0.72838557, z: -0.012191165, w: 0.6848963}
+  m_LocalRotation: {x: -0.01492898, y: 0.72838557, z: -0.012191166, w: 0.6848963}
   m_LocalPosition: {x: 0.00000023172002, y: -0.3288539, z: 0.0000010301246}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
@@ -804,7 +803,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288442506180760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.056016, y: -1.8777963, z: -3.1584923}
+  m_LocalPosition: {x: 0, y: -1.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4214166690884910}
@@ -1107,7 +1106,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 30
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1224,9 +1223,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.34
-  m_Height: 2.2
+  m_Height: 1.86
   m_Direction: 1
-  m_Center: {x: 0, y: 1.1, z: 0}
+  m_Center: {x: 0, y: 0.95, z: 0.21}
 --- !u!137 &137404486997061088
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1307,23 +1306,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.013665199, y: 0.036815092, z: -0.039771676}
     m_Extent: {x: 0.82249093, y: 0.29740816, z: 1.1159314}
   m_DirtyAABB: 0
---- !u!143 &143747500074959858
-CharacterController:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1288442506180760}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &195209436907006384
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -1332,16 +1314,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 1288442506180760}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 3
+  m_Radius: 0.35
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.3
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.85
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

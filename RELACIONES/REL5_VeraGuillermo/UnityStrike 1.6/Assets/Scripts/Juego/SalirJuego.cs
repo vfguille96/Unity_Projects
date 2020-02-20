@@ -23,8 +23,7 @@ public class SalirJuego : MonoBehaviour
         _NombreJugadorUI = GameObject.Find("TMJugador").GetComponent<TextMeshProUGUI>();
         _BtSalir.onClick.AddListener(VolverMenuPrincipal);
         _BtVolver.onClick.AddListener(VolverJuego);
-        _ocultar = false;
-        SetCanvasVisible(false);
+        OcultarMenuSalir();
     }
 
     /// <summary>
@@ -55,10 +54,6 @@ public class SalirJuego : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             SalirJuegoMenu();
-
-        /*if (GameController.TiempoJuegoRestante == 0 && GameController.TiempoJuego != 0)
-            MostrarMenuSalir();*/
-
     }
 
     private void SalirJuegoMenu()
@@ -106,7 +101,6 @@ public class SalirJuego : MonoBehaviour
     {
         OcultarMenuSalir();
         MostrarCursor();
-        StopAllCoroutines();
         SceneManager.LoadScene("Menu");
     }
     

@@ -63,12 +63,14 @@
     <Compile Include="Assets\Scripts\EJ_1_2_3_4\MensajeGUILabel.cs" />
     <Compile Include="Assets\Scripts\Juego\BotonesMenu.cs" />
     <Compile Include="Assets\Scripts\Juego\Disparo.cs" />
+    <Compile Include="Assets\Scripts\Juego\EstablecerNivelesMenu.cs" />
     <Compile Include="Assets\Scripts\Juego\GameController.cs" />
     <Compile Include="Assets\Scripts\Juego\InicializarComponentesJuego.cs" />
     <Compile Include="Assets\Scripts\Juego\MoverCamaraFP.cs" />
     <Compile Include="Assets\Scripts\Juego\MoverJugador.cs" />
     <Compile Include="Assets\Scripts\Juego\ParpadeoLuzMunicion.cs" />
     <Compile Include="Assets\Scripts\Juego\PerseguirJugador.cs" />
+    <Compile Include="Assets\Scripts\Juego\ReaparecerEnemigos.cs" />
     <Compile Include="Assets\Scripts\Juego\SalirJuego.cs" />
     <Compile Include="Assets\Scripts\Juego\TerminarPartida.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

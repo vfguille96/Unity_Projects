@@ -31,10 +31,10 @@ public class ParpadeoLuzMunicion : MonoBehaviour
         if (cambiarRango)
         {
             if (repetirRango)
-                _light.range = Mathf.PingPong(Time.time * velocidadRango, maxRango);
+                _light.range = Mathf.PingPong(Time.timeSinceLevelLoad * velocidadRango, maxRango);
             else
             {
-                _light.range = Time.time * velocidadRango;
+                _light.range = Time.timeSinceLevelLoad * velocidadRango;
                 if (_light.range >= maxRango)
                     cambiarRango = false;
             }
@@ -43,10 +43,10 @@ public class ParpadeoLuzMunicion : MonoBehaviour
         if (cambiarIntensidad)
         {
             if (repetirIntensidad)
-                _light.intensity = Mathf.PingPong(Time.time * velIntensidad, maxIntensidad);
+                _light.intensity = Mathf.PingPong(Time.timeSinceLevelLoad * velIntensidad, maxIntensidad);
             else
             {
-                _light.intensity = Time.time * velIntensidad;
+                _light.intensity = Time.timeSinceLevelLoad * velIntensidad;
                 if (_light.intensity >= maxIntensidad)
                     cambiarIntensidad = false;
             }

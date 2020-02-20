@@ -46,11 +46,25 @@ public class InicializarComponentesJuego : MonoBehaviour
         EstablecerNombreJugadorPorDefecto();
         EstablecerBalas();
         EstablecerEnemigosEliminados();
+        InicializarElementosUI();
+        EstablecerNivelInicioPorDefecto();
+        StartCoroutine(EmpezarCuentaAtras(GameController.TiempoJuego = 120));
+        GameController.TiempoPausado = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private static void EstablecerNivelInicioPorDefecto()
+    {
+        if (GameController.NivelActual == 0)
+            GameController.NivelActual = 1;
+    }
+
+    private void InicializarElementosUI()
+    {
         _healthUI = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
         _bullethUI = GameObject.Find("Bullet").GetComponent<TextMeshProUGUI>();
         _TimeUI = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
-        StartCoroutine(EmpezarCuentaAtras(GameController.TiempoJuego = 20));
-       
     }
 
     private static void EstablecerVidaJugador()
@@ -98,7 +112,6 @@ public class InicializarComponentesJuego : MonoBehaviour
             GameController.TiempoJuegoRestante = _tiempoJuegoActual;
             _timeSpan = TimeSpan.FromSeconds(_tiempoJuegoActual);
         }
-        
         Debug.Log("FIN!!");
     }
 }

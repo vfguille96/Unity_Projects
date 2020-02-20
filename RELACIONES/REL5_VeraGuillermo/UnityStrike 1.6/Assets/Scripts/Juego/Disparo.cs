@@ -60,7 +60,6 @@ public class Disparo : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && GameController.BalasTotales > 0)
         {
-            
             GameController.Disparo = true;
             var position = _camera.position;
             var forward = _camera.forward;
@@ -68,6 +67,13 @@ public class Disparo : MonoBehaviour
             HitInfo = Physics.RaycastAll(position, forward * 100);
 
             Debug.Log(GameController.Disparo);
+
+            // Sonido y animación de disparo.
+            _audioPistola.clip = _disparo;
+            _audioPistola.Play();
+            StartCoroutine(ParticulaFuego());
+            _animacionPistola.enabled = true;
+            _animacionPistola.Play("Eagle2", 0, 0.25F);
 
             if (HitInfo.Length != 0)
             {
@@ -81,22 +87,15 @@ public class Disparo : MonoBehaviour
                         Debug.Log(ENEMIGO.collider.name);
                         Debug.Log(ENEMIGO.distance);
                         enemigoEliminado = true;
-                        GameController.NumeroEnemigosEliminados++;
                         Debug.Log(GameController.Disparo);
                         ENEMIGO.collider.gameObject.GetComponent<AudioSource>().Play();
-                        Destroy(ENEMIGO.collider.gameObject, 0.1F);
+                        Destroy(ENEMIGO.collider.gameObject);
+                        GameController.NumeroEnemigosEliminados++;
                     }
 
                     Debug.Log("[" + i++ + "] PRUEBAAA: " + ENEMIGO.collider.name);
                 }
             }
-
-            // Sonido y animación de disparo.
-            _audioPistola.clip = _disparo;
-            _audioPistola.Play();
-            StartCoroutine(ParticulaFuego());
-            _animacionPistola.enabled = true;
-            _animacionPistola.Play("Eagle2", 0, 0.25F);
 
             // Resta una bala.
             GameController.BalasCargador -= 1;

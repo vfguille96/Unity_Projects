@@ -50,7 +50,7 @@ public class MoverJugador : MonoBehaviour
     /// </summary>
     private void Salto()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !GameController.TiempoPausado)
         {
             var position = transform.position;
             Debug.DrawRay(position, Vector3.down * 10, Color.green);
