@@ -13,11 +13,14 @@
             <e p="MensajeGUILabel.cs" t="Include" />
           </e>
           <e p="Juego" t="Include">
+            <e p="AudioController.cs" t="Include" />
             <e p="BotonesMenu.cs" t="Include" />
             <e p="Disparo.cs" t="Include" />
             <e p="EstablecerNivelesMenu.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="InicializarComponentesJuego.cs" t="Include" />
+            <e p="InicializarOpcionesMenu.cs" t="Include" />
+            <e p="MouseController.cs" t="Include" />
             <e p="MoverCamaraFP.cs" t="Include" />
             <e p="MoverJugador.cs" t="Include" />
             <e p="ParpadeoLuzMunicion.cs" t="Include" />

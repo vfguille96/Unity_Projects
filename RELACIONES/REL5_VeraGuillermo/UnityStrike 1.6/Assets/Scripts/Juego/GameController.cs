@@ -25,6 +25,8 @@ public static class GameController
     
     public static int NumeroEnemigosEliminados { get; set; }
     
+    public static int NUMERO_JUGADORES_INICIALES = 7;
+    
     // Nivel 1
     public const int ROBO_VIDA_L1 = 15;
 
@@ -59,4 +61,10 @@ public static class GameController
     public static float TiempoJuego { get; set; }
 
     public static float TiempoJuegoRestante { get; set; }
+
+    public static float Sensibilidad_X = 2;
+    
+    public static float Sensibilidad_Y = 2;
+    
+    public static bool InvertirEjeY = false;
 }

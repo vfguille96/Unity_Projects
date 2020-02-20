@@ -31,13 +31,13 @@ public class TerminarPartida : MonoBehaviour
             if (GameController.TiempoJuegoRestante == 0 || GameController.Vida == 0)
                 MostrarFinDeJuego();
             if (GameController.NivelActual == 1 &&
-                GameController.NumeroEnemigosEliminados == GameController.NumeroEnemigos_L1 + 7)
+                GameController.NumeroEnemigosEliminados == GameController.NumeroEnemigos_L1 + GameController.NUMERO_JUGADORES_INICIALES)
                 MostrarFinDeJuego();
             if (GameController.NivelActual == 2 &&
-                GameController.NumeroEnemigosEliminados == GameController.NumeroEnemigos_L2 + 7)
+                GameController.NumeroEnemigosEliminados == GameController.NumeroEnemigos_L2 + GameController.NUMERO_JUGADORES_INICIALES)
                 MostrarFinDeJuego();
             if (GameController.NivelActual == 3 &&
-                GameController.NumeroEnemigosEliminados == GameController.NumeroEnemigos_L3 + 7)
+                GameController.NumeroEnemigosEliminados == GameController.NumeroEnemigos_L3 + GameController.NUMERO_JUGADORES_INICIALES)
                 MostrarFinDeJuego();
         }
     }

@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class MoverCamaraFP : MonoBehaviour
 {
-    public float _sensibilidad_X;
-    public float sensibilidad_Y;
-    public bool _invertirEjeY;
-
     // Use this for initialization
     void Start()
     {
@@ -43,15 +39,15 @@ public class MoverCamaraFP : MonoBehaviour
     /// </summary>
     private void MoverCamaraFPRaton()
     {
-        if (_invertirEjeY)
+        if (GameController.InvertirEjeY)
         {
-            transform.eulerAngles += new Vector3(Mathf.Clamp(Input.GetAxis("Mouse Y") * sensibilidad_Y, -30.5F, 41F),
-                Input.GetAxis("Mouse X") * _sensibilidad_X, 0);
+            transform.eulerAngles += new Vector3(Mathf.Clamp(Input.GetAxis("Mouse Y") * GameController.Sensibilidad_Y, -30.5F, 41F),
+                Input.GetAxis("Mouse X") * GameController.Sensibilidad_X, 0);
         }
         else
         {
-            transform.eulerAngles += new Vector3(Mathf.Clamp(-Input.GetAxis("Mouse Y") * sensibilidad_Y, -30.5F, 41F),
-                Input.GetAxis("Mouse X") * _sensibilidad_X, 0);
+            transform.eulerAngles += new Vector3(Mathf.Clamp(-Input.GetAxis("Mouse Y") * GameController.Sensibilidad_Y, -30.5F, 41F),
+                Input.GetAxis("Mouse X") * GameController.Sensibilidad_X, 0);
         }
     }
 }

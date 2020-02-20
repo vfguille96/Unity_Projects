@@ -385,7 +385,8 @@ AudioSource:
   m_GameObject: {fileID: 451345741}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: fe499ccd9b0016c4ebb2673aad15fe4e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -561,6 +562,12 @@ Prefab:
       propertyPath: m_Name
       value: sas (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 82703052612578504, guid: b6d115379c5523a4fafd4b003c1a1de6,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6d115379c5523a4fafd4b003c1a1de6, type: 2}
   m_IsPrefabAsset: 0
@@ -857,9 +864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2346c602fc41d4fa15ac843d81fc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensibilidad_X: 2
-  sensibilidad_Y: 2
-  _invertirEjeY: 0
 --- !u!82 &534669907
 AudioSource:
   m_ObjectHideFlags: 0
@@ -868,7 +872,8 @@ AudioSource:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1185,6 +1190,12 @@ Prefab:
       propertyPath: m_Name
       value: w_pist_deagle_MUN (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 82832778983666348, guid: ba4a06945195ac049b9701a8dae3fc5c,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4a06945195ac049b9701a8dae3fc5c, type: 2}
   m_IsPrefabAsset: 0
@@ -1616,6 +1627,12 @@ Prefab:
       propertyPath: m_Name
       value: w_pist_deagle_MUN (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 82832778983666348, guid: ba4a06945195ac049b9701a8dae3fc5c,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4a06945195ac049b9701a8dae3fc5c, type: 2}
   m_IsPrefabAsset: 0
@@ -1889,6 +1906,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 82832778983666348, guid: ba4a06945195ac049b9701a8dae3fc5c,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4a06945195ac049b9701a8dae3fc5c, type: 2}
   m_IsPrefabAsset: 0
@@ -2431,6 +2454,12 @@ Prefab:
       propertyPath: m_Name
       value: w_pist_deagle_MUN (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 82832778983666348, guid: ba4a06945195ac049b9701a8dae3fc5c,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4a06945195ac049b9701a8dae3fc5c, type: 2}
   m_IsPrefabAsset: 0
@@ -2818,6 +2847,12 @@ Prefab:
       propertyPath: m_Name
       value: sas (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 82703052612578504, guid: b6d115379c5523a4fafd4b003c1a1de6,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6d115379c5523a4fafd4b003c1a1de6, type: 2}
   m_IsPrefabAsset: 0
@@ -3886,7 +3921,8 @@ AudioSource:
   m_GameObject: {fileID: 1973722668}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 41d94ec10eb759446935ffdce23b8987, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4229,6 +4265,12 @@ Prefab:
       propertyPath: m_Name
       value: w_pist_deagle_MUN (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 82832778983666348, guid: ba4a06945195ac049b9701a8dae3fc5c,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243771196949600840, guid: 0e15b40bb1c771d42a7f2ef174067810,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba4a06945195ac049b9701a8dae3fc5c, type: 2}
   m_IsPrefabAsset: 0

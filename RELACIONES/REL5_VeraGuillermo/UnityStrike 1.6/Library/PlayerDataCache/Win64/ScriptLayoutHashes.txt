@@ -135,7 +135,7 @@ a2197c6735ad23e17c7e74fafc637d5f Assembly-CSharp.dll:.Disparo
 2c7e6666ff54b0db8b35a5d74102118c Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MensajeGUILabel
 f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
-ab4dc92e569565f1335a1c16b3d7633d Assembly-CSharp.dll:.MoverCamaraFP
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.MoverCamaraFP
 d947b95c171314b81b313a2f4ffd0411 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.ButtonHandler
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
@@ -185,3 +185,6 @@ e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 0a69a3ffc537a16f655027ce9ba38621 Assembly-CSharp.dll:.TerminarPartida
+cab1d224e8851e912cf3c06517f9b909 Assembly-CSharp.dll:.AudioController
+d08ed9958d421fe678e1195116a8c9dd Assembly-CSharp.dll:.MouseController
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.InicializarOpcionesMenu
