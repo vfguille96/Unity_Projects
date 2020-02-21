@@ -8,9 +8,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="EJ_1_2_3_4" t="Include">
+          <e p="EJ_1_2_3_6" t="Include">
             <e p="CambiarColorColision.cs" t="Include" />
             <e p="MensajeGUILabel.cs" t="Include" />
+            <e p="MenuPrincipalController.cs" t="Include" />
           </e>
           <e p="Juego" t="Include">
             <e p="AudioController.cs" t="Include" />

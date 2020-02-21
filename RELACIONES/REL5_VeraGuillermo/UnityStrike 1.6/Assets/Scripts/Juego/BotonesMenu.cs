@@ -67,11 +67,12 @@ public class BotonesMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Sale del juego.
+    /// Sale del juego. Vuelve a Menú de Ejercicios.
     /// </summary>
     public void BtSalir()
     {
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("MenuDeEjercicios");
     }
 
     /// <summary>

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuDeEjercicios.unity
+    guid: 8404891d7dc5aa34c8d16d4bafc37e0d
+  - enabled: 1
+    path: Assets/Scenes/EJ_1_2_3_6.unity
+    guid: 073ab570dbc13ce4e8e16efe359fb558
+  - enabled: 1
     path: Assets/Scenes/Juego/Menu.unity
     guid: 9fd46789d7b80304abb9c3859660728f
   - enabled: 1

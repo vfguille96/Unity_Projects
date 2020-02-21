@@ -59,8 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\EJ_1_2_3_4\CambiarColorColision.cs" />
-    <Compile Include="Assets\Scripts\EJ_1_2_3_4\MensajeGUILabel.cs" />
+    <Compile Include="Assets\Scripts\EJ_1_2_3_6\CambiarColorColision.cs" />
+    <Compile Include="Assets\Scripts\EJ_1_2_3_6\MensajeGUILabel.cs" />
+    <Compile Include="Assets\Scripts\EJ_1_2_3_6\MenuPrincipalController.cs" />
     <Compile Include="Assets\Scripts\Juego\AudioController.cs" />
     <Compile Include="Assets\Scripts\Juego\BotonesMenu.cs" />
     <Compile Include="Assets\Scripts\Juego\Disparo.cs" />
