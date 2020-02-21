@@ -1,65 +1,84 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BotonesMenu : MonoBehaviour
 {
+    public Canvas _CanvasOpciones;
+    public InputField _nombreJugador;
 
-	public Canvas _CanvasOpciones;
+    // Use this for initialization
+    void Start()
+    {
+        ActivarCanvasOpciones(false);
+        InicializarIFJugador();
+    }
 
-	// Use this for initialization
-	void Start () {
-		ActivarCanvasOpciones(false);
-	}
+    private void InicializarIFJugador()
+    {
+        if (GameController.NombreJugador != "Player 1" && GameController.NombreJugador != String.Empty)
+            _nombreJugador.text = GameController.NombreJugador;
+    }
 
-	/// <summary>
-	/// Carga la escena Juego
-	/// </summary>
-	public void BtNuevaPartida()
-	{
-		GameController.TiempoPausado = false;
-		Time.timeScale = 1;
-		SceneManager.LoadScene("Juego");
-	}
-	
-	/// <summary>
-	/// Activa el Canvas del menú de opciones.
-	/// </summary>
-	public void BtOpciones()
-	{
-		ActivarCanvasOpciones(true);
-	}
+    /// <summary>
+    /// Carga la escena Juego
+    /// </summary>
+    public void BtNuevaPartida()
+    {
+        GameController.TiempoPausado = false;
+        Time.timeScale = 1;
+        EstablecerNombreJugador();
+        SceneManager.LoadScene("Juego");
+    }
 
-	/// <summary>
-	/// Cierra el canvas de opciones.
-	/// </summary>
-	public void BtSalirCanvasOpciones()
-	{
-		ActivarCanvasOpciones(false);
-	}
+    /// <summary>
+    /// Activa el Canvas del menú de opciones.
+    /// </summary>
+    public void BtOpciones()
+    {
+        ActivarCanvasOpciones(true);
+    }
 
-	
-	/// <summary>
-	/// Activa/desactiva el componente "CanvasOpciones".
-	/// </summary>
-	/// <param name="estado">Boolean estado. True, activado. False, desactivado.</param>
-	private void ActivarCanvasOpciones(bool estado)
-	{
-		_CanvasOpciones.gameObject.SetActive(estado);
-	}
+    /// <summary>
+    /// Cierra el canvas de opciones.
+    /// </summary>
+    public void BtSalirCanvasOpciones()
+    {
+        EstablecerNombreJugador();
 
-	/// <summary>
-	/// Sale del juego.
-	/// </summary>
-	public void BtSalir()
-	{
-		Application.Quit();
-	}
+        ActivarCanvasOpciones(false);
+    }
 
-	/// <summary>
-	/// Sonido al pasar el cursor por encima de los botones del menú.
-	/// </summary>
-	public void SoundMouseOver()
-	{
-		GameObject.Find("AudioButtonClick").GetComponent<AudioSource>().Play();
-	}
+    private void EstablecerNombreJugador()
+    {
+        if (_nombreJugador.text != String.Empty)
+            GameController.NombreJugador = _nombreJugador.text;
+    }
+
+
+    /// <summary>
+    /// Activa/desactiva el componente "CanvasOpciones".
+    /// </summary>
+    /// <param name="estado">Boolean estado. True, activado. False, desactivado.</param>
+    private void ActivarCanvasOpciones(bool estado)
+    {
+        _CanvasOpciones.gameObject.SetActive(estado);
+    }
+
+    /// <summary>
+    /// Sale del juego.
+    /// </summary>
+    public void BtSalir()
+    {
+        Application.Quit();
+    }
+
+    /// <summary>
+    /// Sonido al pasar el cursor por encima de los botones del menú.
+    /// </summary>
+    public void SoundMouseOver()
+    {
+        GameObject.Find("AudioButtonClick").GetComponent<AudioSource>().Play();
+    }
 }

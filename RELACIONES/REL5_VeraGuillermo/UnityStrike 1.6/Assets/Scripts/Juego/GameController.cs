@@ -19,6 +19,8 @@ public static class GameController
     
     public static bool TiempoPausado { get; set; }
 
+    public static bool MostrarAyuda = true;
+
     public const float DISTANCIA_MAX_SUELO_SALTO = 1.2F;
 
     public const float DISTANCIA_MIN_ATAQUE = 1.85F;
@@ -30,15 +32,21 @@ public static class GameController
     // Nivel 1
     public const int ROBO_VIDA_L1 = 15;
 
+    public const int TIEMPO_REAPARICION_L1 = 7;
+
     public static int NumeroEnemigos_L1 = 7;
     
     // Nivel 2
     public const int ROBO_VIDA_L2 = 25;
     
+    public const int TIEMPO_REAPARICION_L2 = 3;
+
     public static int NumeroEnemigos_L2 = 14;
     
     // Nivel 3
     public const int ROBO_VIDA_L3 = 35;
+    
+    public const int TIEMPO_REAPARICION_L3 = 2;
 
     public static int NumeroEnemigos_L3 = 28;
 

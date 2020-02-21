@@ -31,7 +31,7 @@ public class ReaparecerEnemigos : MonoBehaviour
                 Instantiate(_enemigo, GameController._respawn[_random.Next(_numPosiciones - 1)],
                     Quaternion.identity);
                 _numEnemigos++;
-                yield return new WaitForSecondsRealtime(10);
+                yield return new WaitForSecondsRealtime(GameController.TIEMPO_REAPARICION_L1);
             }
         }
 
@@ -42,7 +42,7 @@ public class ReaparecerEnemigos : MonoBehaviour
                 Instantiate(_enemigo, GameController._respawn[_random.Next(_numPosiciones - 1)],
                     Quaternion.identity);
                 _numEnemigos++;
-                yield return new WaitForSecondsRealtime(5);
+                yield return new WaitForSecondsRealtime(GameController.TIEMPO_REAPARICION_L1);
             }
         }
 
@@ -53,7 +53,7 @@ public class ReaparecerEnemigos : MonoBehaviour
                 Instantiate(_enemigo, GameController._respawn[_random.Next(_numPosiciones - 1)],
                     Quaternion.identity);
                 _numEnemigos++;
-                yield return new WaitForSecondsRealtime(3);
+                yield return new WaitForSecondsRealtime(GameController.TIEMPO_REAPARICION_L3);
             }
         }
     }
