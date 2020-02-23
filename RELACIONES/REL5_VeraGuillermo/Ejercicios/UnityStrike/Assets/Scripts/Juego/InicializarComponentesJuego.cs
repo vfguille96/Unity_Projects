@@ -1,0 +1,117 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using TMPro;
+using UnityEngine;
+
+public class InicializarComponentesJuego : MonoBehaviour
+{
+    private TextMeshProUGUI _healthUI;
+    private TextMeshProUGUI _bullethUI;
+    private TextMeshProUGUI _TimeUI;
+    private float _tiempoJuegoActual;
+    private TimeSpan _timeSpan;
+    
+    
+    private static int Vida
+    {
+        get { return 100; }
+    }
+
+    private static int BalasTotales
+    {
+        get { return 42; }
+    }
+
+    private static int BalasCargador
+    {
+        get { return 7; }
+    }
+
+    private static int BalasRestantes
+    {
+        get { return 35; }
+    }
+    
+    private static int NumeroEnemigosEliminados
+    {
+        get { return 0; }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        EstablecerVidaJugador();
+        EstablecerNombreJugadorPorDefecto();
+        EstablecerBalas();
+        EstablecerEnemigosEliminados();
+        InicializarElementosUI();
+        EstablecerNivelInicioPorDefecto();
+        StartCoroutine(EmpezarCuentaAtras(GameController.TiempoJuego = 120));
+        GameController.TiempoPausado = false;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private static void EstablecerNivelInicioPorDefecto()
+    {
+        if (GameController.NivelActual == 0)
+            GameController.NivelActual = 1;
+    }
+
+    private void InicializarElementosUI()
+    {
+        _healthUI = GameObject.Find("Health").GetComponent<TextMeshProUGUI>();
+        _bullethUI = GameObject.Find("Bullet").GetComponent<TextMeshProUGUI>();
+        _TimeUI = GameObject.Find("Time").GetComponent<TextMeshProUGUI>();
+    }
+
+    private static void EstablecerVidaJugador()
+    {
+        GameController.Vida = Vida;
+    }
+    
+    private static void EstablecerEnemigosEliminados()
+    {
+        GameController.NumeroEnemigosEliminados = NumeroEnemigosEliminados;
+    }
+
+    private static void EstablecerNombreJugadorPorDefecto()
+    {
+        if (GameController.NombreJugador == null)
+            GameController.NombreJugador = "Player 1";
+    }
+
+    private static void EstablecerBalas()
+    {
+        GameController.BalasCargador = BalasCargador;
+        GameController.BalasTotales = BalasTotales;
+        GameController.BalasRestantes = BalasRestantes;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (GameController.Vida < 0)
+            GameController.Vida = 0;
+        _healthUI.text = "+ " + GameController.Vida;
+        _bullethUI.text = GameController.BalasCargador + "/" + GameController.BalasRestantes;
+        _TimeUI.text = string.Format("{0:D1}:{1:D2}", _timeSpan.Minutes, _timeSpan.Seconds);
+    }
+    
+    public IEnumerator EmpezarCuentaAtras(float tiempoJuego)
+    {
+        _tiempoJuegoActual = tiempoJuego;
+        GameController.TiempoJuegoRestante = _tiempoJuegoActual;
+        while (_tiempoJuegoActual > 0)
+        {
+            //Debug.Log("Cuenta atrás: " + _tiempoJuegoActual);
+            yield return new WaitForSeconds(1.0f);
+            _tiempoJuegoActual--;
+            GameController.TiempoJuegoRestante = _tiempoJuegoActual;
+            _timeSpan = TimeSpan.FromSeconds(_tiempoJuegoActual);
+        }
+        Debug.Log("FIN!!");
+    }
+}
