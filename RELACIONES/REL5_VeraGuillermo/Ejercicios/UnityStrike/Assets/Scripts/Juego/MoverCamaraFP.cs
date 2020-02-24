@@ -6,7 +6,7 @@ public class MoverCamaraFP : MonoBehaviour
 {
     private Vector2 LookAxis;
     public FixedTouchField TouchField;
-    
+
     // Use this for initialization
     void Start()
     {
@@ -45,13 +45,15 @@ public class MoverCamaraFP : MonoBehaviour
     {
         if (GameController.InvertirEjeY)
         {
-            transform.eulerAngles += new Vector3(Mathf.Clamp(LookAxis.y * (GameController.Sensibilidad_Y / 10), -30.5F, 41F),
-                LookAxis.x * (GameController.Sensibilidad_X/ 10), 0);
+            transform.eulerAngles += new Vector3(
+                Mathf.Clamp(LookAxis.y * (GameController.Sensibilidad_Y / 10), -30.5F, 41F),
+                LookAxis.x * (GameController.Sensibilidad_X / 10), 0);
         }
         else
         {
-            transform.eulerAngles += new Vector3(Mathf.Clamp(-LookAxis.y * (GameController.Sensibilidad_Y / 10), -30.5F, 41F),
-                LookAxis.x * (GameController.Sensibilidad_X/ 10), 0);
+            transform.eulerAngles += new Vector3(
+                Mathf.Clamp(-LookAxis.y * (GameController.Sensibilidad_Y / 10), -30.5F, 41F),
+                LookAxis.x * (GameController.Sensibilidad_X / 10), 0);
         }
     }
 }
